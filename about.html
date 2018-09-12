@@ -1,0 +1,165 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width">
+
+        <title>
+            aman 
+        </title>
+        <style>
+            a:visited,a:active,a
+            {
+                text-decoration: none;
+                color: white;
+            }
+            .select-menu
+            {
+                display: none;
+                padding: 20px;
+            }
+            select
+            {
+                padding: 10px;
+                width: 350px;
+                border-radius: 5px;
+            }
+            body
+            {
+                width: 100%;
+                height: 100%;
+                font-family: arial;
+                margin: 0;
+                padding: 0;
+                background: url(images/background.jpg);   
+            }
+            .menu
+            {
+                position: fixed;
+                background-color: rgba(0,0,0,0.5);
+                width: 100%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+            }
+            .menu-item
+            {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                padding: 20px;
+                color: white;
+            }
+            .main-content
+            {
+                padding-top: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: auto;
+                width: 100%;
+                height: calc(100% - 60px);
+            }
+            .box
+            {
+                display: flex;
+                background-color: rgba(125,125,125,0.5);
+                min-width:80%;
+                height: 500px;
+                border-radius: 20px;
+               
+                
+            }
+            .image1 , .image2
+            {
+                width:100%;
+                
+                height: 100%;
+                
+            }
+            .image1
+            {   
+                background-image: url(images/logo.jpg);
+                background-size: 100% 100%;
+                border-radius: 20px 0 0 20px;
+            }
+            .image2
+            {
+                
+                background-image: url(images/1.jpg);
+                background-size: 100% 100%;
+                transition-duration: 1s;
+                border-radius: 0px 20px 20px 0px;
+            }
+            @media screen and (max-width: 992px) 
+            {
+                .menu-item
+                {
+                    display: none;
+                }
+                .select-menu
+                {
+                    display: flex;
+                }
+
+                .box
+                {
+                    flex-direction: column;
+                }
+                .image1,.image2
+                {
+                    border-radius: 0;
+                }
+                .image1
+                {
+                    border-radius: 20px 20px 0 0;
+                }
+                .image2
+                {
+                    border-radius: 0px 0px 20px 20px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <div class="select-menu">
+
+                <!-- JAVASCRIPT FOR MENU BAR -->
+
+                    <select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
+                            <option value="index.html">Home</option>
+                            <option value="menu.html">Menu</option>
+                            <option value="about.html">About</option>
+                </select>
+            </div>
+            
+            <div class="menu-item"><a href="index.html">HOME</a></div>
+            <div class="menu-item"><a href="menu.html">MENU</a></div>
+            <div class="menu-item"><a href="about.html">ABOUT</a></div>
+        </div>
+        <div class="main-content">
+            <div class="box" >
+                <div class="image1"></div>
+                <div class="image2"></div>
+            </div>
+        </div>
+
+        <!-- JQUERY CODE FOR PHOTO SLIDESHOW -->
+        
+        <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            $(document).ready(function(){
+                var arr=["images/1.jpg","images/2.jpg","images/3.jpg"];
+                var i=0;
+                setInterval(function(){
+                        $(".image2").css("background-image","url("+arr[i]+")");
+                        i=i+1;
+                        i=i%(arr.length);
+                    },3000);
+            });
+            $(document).ready(function(){
+            $('body').slideDown();
+        });
+    </script>
+    </body>
+</html>
