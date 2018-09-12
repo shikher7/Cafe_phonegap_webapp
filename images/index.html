@@ -1,0 +1,132 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width">
+
+        <title>
+            aman 
+        </title>
+        <style>
+            .select-menu
+            {
+                display: none;
+                padding: 20px;
+            }
+            select
+            {
+                padding: 10px;
+                width: 100px;
+                border-radius: 5px;
+            }
+            body
+            {
+                width: 100%;
+                height: 100%;
+                font-family: arial;
+                margin: 0;
+                padding: 0;
+                background: url(images/background.jpg);   
+            }
+            .menu
+            {
+                position: fixed;
+                background-color: rgba(0,0,0,0.5);
+                width: 100%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+            }
+            .menu-item
+            {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                padding: 20px;
+                color: white;
+            }
+            .main-content
+            {
+                padding-top: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: auto;
+                width: 100%;
+                height: calc(100% - 60px);
+            }
+            .box
+            {
+                display: flex;
+                background-color: rgba(125,125,125,0.5);
+                min-width:80%;
+                height: 500px;
+            }
+            .image1 , .image2
+            {
+                width:100%;
+                height: 100%;
+                
+            }
+            .image2
+            {
+                background-image: url(images/1.jpg);
+                background-size: 100% 100%;
+            }
+            @media screen and (max-width: 992px) 
+            {
+                .menu-item
+                {
+                    display: none;
+                }
+                .select-menu
+                {
+                    display: flex;
+                }
+
+                .box
+                {
+                    flex-direction: column;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <div class="select-menu">
+                    <select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
+                            <option value="http://www.google.com">Homevbjvbjb</option>
+                            <option value="http://www.yahoo.com">Home</option>
+                            
+                </select>
+            </div>
+            <div class="menu-item">Home</div>
+            <div class="menu-item">Support</div>
+            <div class="menu-item">FAQS</div>
+            <div class="menu-item">Events</div>
+        </div>
+        <div class="main-content">
+            <div class="box">
+                <div class="image1">bjvbj</div>
+                <div class="image2">dvjbvjv</div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script type="text/javascript" charset="utf-8">
+            var $selectList = $('<select></select>')
+            $('.menu').append($selectList);
+            $('menu-item').each(function() {
+            var $anchorLink = $(this);
+            var $dropDownOption = $('<option></option>');
+            if ($anchorLink.parent().hasClass('selected')) {
+              $dropDownOption.prop('selected', true);
+            }
+            $dropDownOption.text($anchorLink.text());
+            $selectList.append($dropDownOption);
+            $dropDownOption.val($anchorLink.attr('href'));
+            });
+            $selectList.change(function() {
+              window.location = $selectList.val();
+            });
+            </script> -->
+    </body>
+</html>
