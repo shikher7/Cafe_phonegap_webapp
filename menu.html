@@ -3,15 +3,22 @@
             <meta name="viewport" content="width=device-width">
 
         <title>
-            aman 
+            SHIKHER 
         </title>
         <style>
+            #fixedbutton {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        width: 150px;
+            height: 110px;
+        }
             a:visited,a:active,a
             {
                 text-decoration: none;
                 color: white;
             }
-            .select-menu
+            .select-menu_main
             {
                 display: none;
                 padding: 20px;
@@ -31,7 +38,7 @@
                 padding: 0;
                 background: url(images/background.jpg);   
             }
-            .menu
+            .menu_main
             {
                 position: fixed;
                 background-color: rgba(0,0,0,0.5);
@@ -40,7 +47,7 @@
                 align-content: center;
                 justify-content: center;
             }
-            .menu-item
+            .menu_main-item
             {
                 display: flex;
                 justify-content: center;
@@ -56,7 +63,7 @@
                 align-items: center;
                 overflow: auto;
                 width: 100%;
-                height: calc(100% - 60px);
+                min-height: calc(100% - 60px);
             }
             .box
             {
@@ -68,11 +75,18 @@
                
                 
             }
-            .image1 , .image2, .image3
+            .image1 , .image2, .image3, .image4
             {
                 width:100%;
-                
+                opacity: 1;
                 height: 100%;
+                -webkit-transition: .3s ease-in-out;
+	            transition: .3s ease-in-out;
+                
+            }
+            .image1:hover , .image2:hover, .image3:hover, .image4:hover
+            {
+                opacity: .5;
                 
             }
             .image1
@@ -99,11 +113,11 @@
             }
             @media screen and (max-width: 992px) 
             {
-                .menu-item
+                .menu_main-item
                 {
                     display: none;
                 }
-                .select-menu
+                .select-menu_main
                 {
                     display: flex;
                 }
@@ -131,50 +145,230 @@
             }
 
         </style>
+                <link rel="stylesheet" href="css/styles.css">
+                <style>
+                    .menu
+                    {
+                        padding-top: 0 !important;
+                    }
+                    .main .container .container-menu
+                    {
+                        background-color: white;
+                    }
+                </style>
     </head>
-    <body>
-        <div class="menu">
-            <div class="select-menu">
+    <body id="TOP">
+        <div class="menu_main"> 
+            <div class="select-menu_main">
 
-                <!-- JAVASCRIPT FOR MENU BAR -->
+                <!-- JAVASCRIPT FOR menu_main BAR -->
 
-                    <select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
+                    <select name="menu_main" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
                             <option value="menu.html">Menu</option>
                             <option value="index.html">Home</option>
                             <option value="about.html">About</option>
                 </select>
             </div>
             
-            <div class="menu-item"><a href="index.html">HOME</a></div>
-            <div class="menu-item"><a href="menu.html">MENU</a></div>
-            <div class="menu-item"><a href="about.html">ABOUT</a></div>
+            <div class="menu_main-item"><a href="index.html">Home</a></div>
+            <div class="menu_main-item"><a href="menu.html">Menu</a></div>
+            <div class="menu_main-item"><a href="about.html">About</a></div>
         </div>
-        <div class="main-content">
+        <div class="main-content" >
             <div class="box" >
-                <div class="image1"></div>
-                <div class="image2"></div>
-                <div class="image3"></div>
+                <div class="image1"  id="FOOD_PHOTO"></div>
+                <div class="image2"  id="COFFEE_PHOTO"></div>
+                <div class="image3"  id="DESSERT_PHOTO"></div>
             </div>
+        </div>
+        <div id="floating_button">
+            <img id="fixedbutton" class="image4"src="images/TOP.png">
         </div>
         
+        
+
         <div class="main-content">
-            <div class="box" >
-                <div class="image1"></div>
-                <div class="image2"></div>
-                <div class="image3"></div>
+                <section class="main">
+                    <section class="menu">
+                        <div class="container">
+                            <h3 class="menu_type" id="FOOD">Food Menu</h3>
+                            <div class="container-menu">
+                                <div class="container-menu2">
+                                    <article>
+                                        <p class="category">South Indian</p>
+                                        <div class="element">
+                                            <p class="name">Masala Dosa</p>
+                                            <p class="price">₹50</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Idli Sambhar</p>
+                                            <p class="price">₹40</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Sabhar Vada</p>
+                                            <p class="price">₹30</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Uppam</p>
+                                            <p class="price">₹50</p>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <p class="category">International &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <div class="element">
+                                            <p class="name">Begian Waffle</p>
+                                            <p class="price">₹100</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Caramel Pancakes</p>
+                                            <p class="price">₹100</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Mexican Pasta</p>
+                                            <p class="price">₹150</p>
+                                        </div>
+                                        <div class="element">
+                                            <p class="name">Cheese Burger</p>
+                                            <p class="price">₹120</p>
+                                        </div>
+                                    </article>
+            
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                     </div>
             </div>
-        </div>
-        <div class="main-content">
-            <div class="box" >
-                <div class="image1"></div>
-                <div class="image2"></div>
-                <div class="image3"></div>
-            </div>
-        </div>
+            <div class="main-content">
+                    <section class="main">
+                        <section class="menu">
+                            <div class="container">
+                                <h3 class="menu_type" id="COFFEE">Coffee Menu</h3>
+                                <div class="container-menu">
+                                    <div class="container-menu2">
+                                        <article>
+                                            <p class="category">Coffee</p>
+                                            <div class="element">
+                                                <p class="name">Filter Coffee</p>
+                                                <p class="price">₹40</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Espresso</p>
+                                                <p class="price">₹50</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Cappuccino</p>
+                                                <p class="price">₹70</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Mocaccino</p>
+                                                <p class="price">₹80</p>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <p class="category">Tea &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                            <div class="element">
+                                                <p class="name">Chai</p>
+                                                <p class="price">₹30</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Green Tea</p>
+                                                <p class="price">₹40</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Lemon Tea</p>
+                                                <p class="price">₹50</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Black Tea</p>
+                                                <p class="price">₹50</p>
+                                            </div>
+                                        </article>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                         </div>
+                </div>
+            <div class="main-content">
+                    <section class="main">
+                        <section class="menu">
+                            <div class="container">
+                                <h3 class="menu_type" id="DESSERT">Dessert</h3>
+                                <div class="container-menu">
+                                    <div class="container-menu2">
+                                        <article>
+                                            <p class="category">Ice-cream</p>
+                                            <div class="element">
+                                                <p class="name">Vanilla</p>
+                                                <p class="price">₹40</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Chocolate</p>
+                                                <p class="price">₹50</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Strawberry</p>
+                                                <p class="price">₹50</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Blackcurrent</p>
+                                                <p class="price">₹60</p>
+                                            </div>
+                                        </article>
+                                        <article>
+                                            <p class="category">Sweets &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                            <div class="element">
+                                                <p class="name">Rasgulla</p>
+                                                <p class="price">₹70</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Gulab Jamun</p>
+                                                <p class="price">₹80</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Cheesecake</p>
+                                                <p class="price">₹150</p>
+                                            </div>
+                                            <div class="element">
+                                                <p class="name">Lava Cake</p>
+                                                <p class="price">₹120</p>
+                                            </div>
+                                        </article>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                         </div>
+                </div>
        
-        <!-- JQUERY CODE FOR PHOTO SLIDESHOW -->
+        <!-- JQUERY CODE FOR PHOTO SCROLL TO MENU-->
         
         <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+       $("#FOOD_PHOTO").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#FOOD").offset().top
+    }, 2000);
+});
+$("#COFFEE_PHOTO").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#COFFEE").offset().top
+    }, 2000);
+});
+$("#DESSERT_PHOTO").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#DESSERT").offset().top
+    }, 2000);
+});
+$("#fixedbutton").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#TOP").offset().top
+    }, 2000);
+});
+        </script>
 
     </body>
 </html>
