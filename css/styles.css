@@ -1,0 +1,107 @@
+* {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+
+
+.main .menu {
+    padding-top: 570px;
+    margin-bottom: 50px;
+}
+
+.main .menu .menu_type
+
+{
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.main .menu .container-menu,
+.main .menu .container-menu2 {
+    border: 3px solid #8A0829;
+    background: transparent;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.main .menu article {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+.main .menu .category {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main .menu .element {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom:  4px dotted #000;
+    overflow: hidden;
+}
+
+.main .menu .name {
+    font-size: 20px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.main .menu .price {
+    font-size: 20px;
+    margin-bottom: 15px;
+    float: right;
+}
+
+
+
+
+
+/* ---------- MEDIA QUERIES ------------ */
+
+
+@media screen and (max-width: 800px) {
+   
+
+
+    .main .menu {
+        padding-top: 300px;
+    }
+
+    .main .menu article {
+        width: 100%;
+    }
+
+   
+}
+
+@media screen and (max-width: 400px) {
+    
+
+    .main .menu article .name,
+    .main .menu article .price {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+}
