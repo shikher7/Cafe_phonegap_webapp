@@ -3,9 +3,73 @@
             <meta name="viewport" content="width=device-width">
 
         <title>
-            aman 
+            SHIKHER
         </title>
         <style>
+.accordionWrapper
+{
+
+    float:left;
+    width:100%;
+    box-sizing:border-box;
+    margin: 0px;
+    padding: 0 20px;
+    padding-top:100px;
+    box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);
+
+}
+.accordionItem{
+    float:left;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    font-family:'Open-sans',Arial,sans-serif;
+}
+.accordionItemHeading{
+    cursor:pointer;
+    margin:0px 0px 10px 0px;
+    padding:25px 10px;
+    background:#ce6a24;
+    color:#fff;
+    width:100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.close .accordionItemContent{
+    height:0px;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+    float:left;
+    display:block;
+    
+    
+}
+.open .accordionItemContent{
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display:block;
+	transform: scaleY(1);
+	transform-origin: top;
+	transition: transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.open .accordionItemHeading{
+    margin:0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #e48a4c;
+    color: #fff;
+}
+
             a:visited,a:active,a
             {
                 text-decoration: none;
@@ -138,10 +202,36 @@
             <div class="menu-item"><a href="menu.html">MENU</a></div>
             <div class="menu-item"><a href="about.html">ABOUT</a></div>
         </div>
-        <div class="main-content">
-            <div class="box" >
-                <div class="image1"></div>
-                <div class="image2"></div>
+        <div class="accordionWrapper">
+            <div class="accordionItem open">
+                  <div class="accordionItemHeading">Description</div>
+                  <div class="accordionItemContent">
+                    <p>Centrally located in VIT University,Vellore , The VITcafe offers a comfortable environment for everyone. Come and enjoy our selection of homemade to internation food, coffee, tea and dessert. </p>
+                            <p>  Whether you're looking to relax over a cup of espresso or grab a quick bite to go, the VITcafe is for you.</p>
+                  </div>
+                </div>
+            
+                <div class="accordionItem close">
+                  <div class="accordionItemHeading">Contact us</div>
+                  <div class="accordionItemContent">
+                    <p>VITCafe(near SJT),VIT University,Vellore - 632014 Tamil Nadu, India</p>
+                    <p>
+                    Telephone:(440)546.0901<br>
+                    Toll Free: (800) 562.8575<br>
+                    (440) 546.0960<br>
+                    Email:sales@VITcafe.com</p>
+                  </div>
+                </div>
+            
+                <div class="accordionItem close">
+                  <div class="accordionItemHeading">Our Mission</div>
+                  <div class="accordionItemContent">
+                    <p>
+                            Our mission is to serve the VIT University by providing the highest-quality coffees, meals, and desserts in 
+                            an atmosphere that meets the needs of students and staff who are in a hurry as well as those who want a 
+                            place to relax and enjoy their beverages and food.</p>
+                  </div>
+                </div>
             </div>
         </div>
 
@@ -161,6 +251,20 @@
             $(document).ready(function(){
             $('body').slideDown();
         });
+        var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionItemHeading');
+    for (i = 0; i < accHD.length; i++) {
+        accHD[i].addEventListener('click', toggleItem, false);
+    }
+    function toggleItem() {
+        var itemClass = this.parentNode.className;
+        for (i = 0; i < accItem.length; i++) {
+            accItem[i].className = 'accordionItem close';
+        }
+        if (itemClass == 'accordionItem close') {
+            this.parentNode.className = 'accordionItem open';
+        }
+    }
     </script>
     </body>
 </html>
